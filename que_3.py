@@ -14,5 +14,3 @@ words_occurrence = {key:flat_list.count(key) for key in flat_list}
 
 print("Number of time each word appears:")
 print(words_occurrence)
-
-       

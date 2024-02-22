@@ -1,20 +1,20 @@
+import itertools
+
 Numbers = [9, 4, 8, 10, 2, 4, 8, 3, 14, 4, 8]
 n = 12
 first = 0
+main_list = []
 
-list_1 = []
-for first in range(0,len(Numbers)-1):
-    for last in range(first +1 ,len(Numbers)-1):
+for c in itertools.combinations(sorted(Numbers), 2):
 
-   
-        if (Numbers[first] + Numbers[last]) == n:
+        if (c[0] + c[1]) == n:
         
-            list_2 = []
-            list_2.append(Numbers[first])
-            list_2.append(Numbers[last])
-            list_2.sort()
+            sub_list = []
+            sub_list.append(c[0])
+            sub_list.append(c[1])
+            sub_list.sort()
         
-            if list_2 not in list_1:
-                list_1.append(list_2)
+            if sub_list not in main_list:
+                main_list.append(sub_list)
         
-print(list_1)
+print(main_list)
